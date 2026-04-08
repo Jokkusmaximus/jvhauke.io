@@ -9,20 +9,18 @@
 <body>
 
 
-
-<!-- In a nav bar -->
 <header class="site-header">
-  <div class="site-header-name">Joakim Vik Haukedal</div>
-  <nav class="site-nav">
-    <a href="index.html">Home</a>
-    <a href="https://github.com/Jokkusmaximus" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a href="joakim_vh_cv.html">My CV</a>
-  </nav>
+  <div id="navbar-placeholder"></div>
+
+  <!-- Load the navbar script. 'defer' means it runs after the HTML is parsed,
+       so the placeholder div is guaranteed to exist when the script runs. -->
+  <script src="js/navbar.js" defer></script>
 </header>
 
 <h1>Joakim Vik Haukedal</h1>
 
 <p>This website will be used to present my projects, and experiences.
+
 Currently under construction</p
 
 <!-- As a button-style link -->
