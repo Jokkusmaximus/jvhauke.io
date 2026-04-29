@@ -119,9 +119,25 @@
   }
   .topbar a { color: var(--sect); text-decoration: underline; }
 
+ .row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  background: var(--accent-light);
+  border: 3px solid var(--sect);
+  padding: 14px 18px;
+  margin: 5px 5px 5px;
+/*  font-size: 12.5px;*/
+/*  line-height: 1.65;*/
+  color: #2a1f10;
+}
+
   /* ── Body padding ── */
   .doc-body { padding: 36px 48px 48px; }
 
+/*=== CV Stuff ====*/
   /* ── Section headings ── */
   .cvsection {
     margin: 28px 0 6px;
