@@ -1,310 +1,321 @@
  :root {
-    --sect: #501e0a;
-    --bg:   #86909980;
-    --soft: #e1e1ff;
-    --ink:  #1a1510;
-    --page: #faf9f7;
-    --muted: #8a8070;
-    --accent-light: #f5f0eb;
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: 'Raleway', sans-serif;
-    background: #e8e4df;
-    color: var(--ink);
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  /* ── Site header banner ── */
-  .site-header {
-    background: var(--sect);          /* the dark brown #501e0a */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;   /* name on left, links on right */
-    padding: 0 40px;
-    height: 52px;
-	box-shadow: 0 2px 12px rgba(0,0,0,0.3);
-	position: sticky;
-	top: 0;
-	z-index: 100;
-  }
-
-  .site-header-name {
-    font-family: 'Cormorant Garamond', serif;
-	font-size: 1.3rem;
-	font-weight: 300;
-	color: white;
-	letter-spacing: 0.15em;
-	text-transform: uppercase;
-  }
-
-  .site-nav {
-    display: flex;
-    gap: 24px;
-  }
-
-  .site-nav a {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.65);
-    text-decoration: none;
-    border-bottom: 3px solid transparent;   /* reserves space for hover indicator */
-    padding-bottom: 2px;
-    transition: color 0.2s, border-color 0.2s;
-  }
-
-  .site-nav a:hover {
-    color: white;
-    border-bottom-color: #d4956a;    /* the warm orange accent from the original */
-  }
-
-  /* ── Page wrapper ── */
-  .page { display: none; max-width: 860px; margin: 40px auto; }
-  .page.active { display: block; animation: fadeIn 0.3s ease; }
-  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:none; } }
-
-  /* ── Document shell ── */
-  .doc {
-    background: var(--page);
-    box-shadow: 0 4px 40px rgba(0,0,0,0.18);
-    overflow: hidden;
-  }
-
-  /* ── Header bar ── */
-  .doc-header {
-    background: #86909999;
-    padding: 28px 40px;
-    text-align: center;
-    position: relative;
-  }
-  .doc-header h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.6rem;
-    font-weight: 300;
-    color: white;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .doc-header .divider {
-    display: inline-block;
-    width: 2px;
-    height: 36px;
-    background: var(--sect);
-    vertical-align: middle;
-    margin: 0 18px;
-    opacity: 0.8;
-  }
-  .doc-header .subtitle {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.6rem;
-    font-weight: 300;
-    color: white;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-  .topbar {
-    background: var(--page);
-    padding: 8px 40px;
-    text-align: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 10.5px;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    border-bottom: 1px solid var(--soft);
-  }
-  .topbar a { color: var(--sect); text-decoration: underline; }
-
- .row {
-  display: flex;
+     --design_clr: #501e0a;/*red-brown-orange*/
+	 --design_light_clr: #d4956a; /* the warm orange*/
+     --bg_clr: #e8e4df;/*light redish-brown*/
+	 --bg_light_clr: #f5f0eb;/*subtly lighter bg_clr*/
+     --page_bg_clr: #faf9f7;/*off-white */
+     --accent_clr: #86909999;/*metallic blue*/
+	 --accent_light_clr: #e1e1ff;/*light metallic blue*/
+     --text_clr: #1a1510;/*Slighlty off-black */
+     --text_muted_clr: #8a8070;/*dark brown*/
+     -- 
+}
+ *, *::before, *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+}
+ body {
+     font-family: 'Raleway', sans-serif;
+     background: var(--bg_clr);
+     color: var(--text_clr);
+     font-size: 13px;
+     line-height: 1.6;
+}
+/* ── Site header banner ── */
+ .site-header {
+     background: var(--design_clr);
+     display: flex;
+     align-items: center;
+     justify-content: space-between; /* name on left, links on right */
+     padding: 0 40px;
+     height: 52px;
+     box-shadow: 0 2px 12px rgba(50,10,0,0.3);
+     position: sticky;
+     top: 0;
+     z-index: 100;
+}
+ .site-header-name {
+     font-family: 'Cormorant Garamond', serif;
+     font-size: 1.3rem; /* rem= "root em". Site header is 30% larger than page default */
+     font-weight: 300;
+     color: white;
+     letter-spacing: 0.15em;
+     text-transform: uppercase;
+}
+ .site-nav {
+     display: flex;
+     gap: 24px;
+}
+ .site-nav a {
+    /* means that it is an "<a>" element nested under an element with the tag "site-nav" */
+     font-family: 'DM Mono', monospace;
+     font-size: 11px;
+     letter-spacing: 0.12em;
+     text-transform: uppercase;
+     color: white;
+     border-bottom: 3px solid transparent; /* reserves space for hover indicator */
+     padding-bottom: 2px;
+     transition: color 0.2s, border-color 0.2s;
+}
+ .site-nav a:hover {
+     border-bottom-color: var(--design_light_clr);
+}
+/* ── Page wrapper ── */
+ .page {
+     display: block;
+     max-width: 860px;
+     margin: 40px auto;
 }
 
-.column {
-  flex: 50%;
-  background: var(--accent-light);
-  border: 3px solid var(--sect);
-  padding: 14px 18px;
-  margin: 5px 5px 5px;
-/*  font-size: 12.5px;*/
-/*  line-height: 1.65;*/
-  color: #2a1f10;
+/* ── Document shell ── */
+ .doc {
+     background: var(--page_bg_clr);
+     box-shadow: 0 4px 40px rgba(0,0,0,0.18);
+     overflow: hidden;
 }
-
-  /* ── Body padding ── */
-  .doc-body { padding: 36px 48px 48px; }
-
+/* ── Header bar ── */
+ .doc-header {
+     background: var(--accent_clr);
+     padding: 28px 40px;
+     text-align: center;
+     position: relative;
+}
+ .doc-header h1 { /*unused?*/
+     font-family: 'Cormorant Garamond', serif;
+     font-size: 2.6rem;
+     font-weight: 300;
+     color: white;
+     letter-spacing: 0.15em;
+     text-transform: uppercase;
+}
+ .doc-header .divider {
+     display: inline-block;
+     width: 2px;
+     height: 36px;
+     background: var(--design_clr);
+     vertical-align: middle;
+     margin: 0 18px;
+     opacity: 0.8;
+}
+ .doc-header .subtitle {
+     font-family: 'Cormorant Garamond', serif;
+     font-size: 2.6rem;
+     font-weight: 300;
+     color: white;
+     letter-spacing: 0.15em;
+     text-transform: uppercase;
+}
+ .topbar {
+     background: var(--page_bg_clr);
+     padding: 8px 40px;
+     text-align: center;
+     font-family: 'DM Mono', monospace;
+     font-size: 10.5px;
+     color: var(--text_muted_clr);
+     letter-spacing: 0.04em;
+     border-bottom: 1px solid var(--accent_light_clr);
+}
+ .topbar a {
+     color: var(--design_clr);
+     text-decoration: underline;
+}
+/* ── Body padding ── */
+ .doc-body {
+     padding: 36px 48px 48px;
+}
 /*=== CV Stuff ====*/
-  /* ── Section headings ── */
-  .cvsection {
-    margin: 28px 0 6px;
-    display: flex;
-    align-items: center;
-    gap: 0;
-  }
-  .cvsection .arrows {
-    display: flex;
-    margin-right: 0;
-  }
-  .arrow-shape {
-    width: 0; height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 10px solid #86909980;
-    margin-right: -2px;
-  }
-  .cvsection-label {
-    background: var(--sect);
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 700;
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    padding: 5px 16px 5px 10px;
-    line-height: 1.4;
-  }
+/* ── Section headings ── */
+ .cvsection {
+     margin: 28px 0 6px;
+     display: flex;
+     align-items: center;
+     gap: 0;
+}
+ .cvsection .arrows {
+     display: flex;
+     margin-right: 0;
+}
+ .arrow-shape {
+     width: 0;
+     height: 0;
+     border-top: 10px solid transparent;
+     border-bottom: 10px solid transparent;
+     border-left: 10px solid #86909980;
+     margin-right: -2px;
+}
+ .cvsection-label {
+     background: var(--design_clr);
+     color: white;
+     font-family: 'Raleway', sans-serif;
+     font-weight: 700;
+     font-size: 11px;
+     letter-spacing: 0.14em;
+     text-transform: uppercase;
+     padding: 5px 16px 5px 10px;
+     line-height: 1.4;
+}
+/* ── CV Event ── */
+ .cvevent {
+     margin: 14px 0 2px;
+}
+ .cvevent-header {
+     display: grid;
+     grid-template-columns: 110px 1fr auto;
+     gap: 8px;
+     align-items: baseline;
+}
+ .cvevent-date {
+     color: var(--text_muted_clr);
+     font-family: 'DM Mono', monospace;
+     font-size: 10.5px;
+     padding-top: 1px;
+}
+ .cvevent-title {
+     font-weight: 700;
+     font-size: 13px;
+}
+ .cvevent-place {
+     color: var(--design_clr);
+     font-size: 11.5px;
+     font-weight: 600;
+     text-align: right;
+     white-space: nowrap;
+}
+ .cvevent-rule {
+     height: 1px;
+     background: var(--accent_light_clr);
+     margin: 5px 0 8px;
+}
+ .cvevent-bullets {
+     padding-left: 0;
+     list-style: none;
+}
+ .cvevent-bullets li {
+     display: flex;
+     gap: 8px;
+     margin-bottom: 4px;
+     font-size: 12.5px;
+     color: #2a2010;
+     line-height: 1.55;
+}
+ .bullet-arrow {
+     flex-shrink: 0;
+     margin-top: 3px;
+     width: 0;
+     height: 0;
+     border-top: 6px solid transparent;
+     border-bottom: 6px solid transparent;
+     border-left: 7px solid #86909999;
+}
+/* ── Header event (meta) ── */
+ .headerevent {
+     display: grid;
+     grid-template-columns: 110px 1fr;
+     gap: 8px;
+     margin-bottom: 7px;
+     align-items: baseline;
+}
+ .headerevent-key {
+     color: var(--design_clr);
+     font-size: 12px;
+     font-weight: 600;
+}
+ .headerevent-key::before {
+     content: '';
+     display: inline-block;
+     width: 0;
+     height: 0;
+     border-top: 5px solid transparent;
+     border-bottom: 5px solid transparent;
+     border-left: 6px solid #86909999;
+     margin-right: 6px;
+     vertical-align: middle;
+     margin-top: -2px;
+}
+ .headerevent-val {
+     font-size: 12.5px;
+     color: var(--text_clr);
+}
+/* ── Skills table ── */
+ .skill-row {
+     display: grid;
+     grid-template-columns: 110px 1fr;
+     gap: 8px;
+     margin-bottom: 10px;
+     align-items: start;
+}
+ .skill-label {
+     font-weight: 700;
+     font-size: 12.5px;
+}
+ .skill-inner-row {
+     margin-bottom: 3px;
+     font-size: 12px;
+}
+ .skill-inner-row strong {
+     font-weight: 600;
+     color: var(--design_clr);
+}
+/* ── Images ── */
+ img {
+     width: 100%;
+}
+/* ── Profile photo ── */
+ .photo-area {
+     float: right;
+     margin: -8px 0 12px 24px;
+     overflow: hidden;
+	 width: 150px;
+	 height: auto;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+ .photo-placeholder {
+     font-family: 'DM Mono', monospace;
+     font-size: 9px;
+     color: var(--text_muted_clr);
+     text-align: center;
+     padding: 8px;
+}
+/* ── Footer bar ── */
+ .doc-footer {
+     background: #86909999;
+     padding: 10px 40px;
+     text-align: center;
+     font-family: 'DM Mono', monospace;
+     font-size: 10px;
+     color: white;
+     letter-spacing: 0.06em;
+}
+ .doc-footer a {
+     color: var(--design_clr);
+     text-decoration: underline;
+}
 
-  /* ── CV Event ── */
-  .cvevent {
-    margin: 14px 0 2px;
-  }
-  .cvevent-header {
-    display: grid;
-    grid-template-columns: 110px 1fr auto;
-    gap: 8px;
-    align-items: baseline;
-  }
-  .cvevent-date {
-    color: var(--muted);
-    font-family: 'DM Mono', monospace;
-    font-size: 10.5px;
-    padding-top: 1px;
-  }
-  .cvevent-title { font-weight: 700; font-size: 13px; }
-  .cvevent-place {
-    color: var(--sect);
-    font-size: 11.5px;
-    font-weight: 600;
-    text-align: right;
-    white-space: nowrap;
-  }
-  .cvevent-rule {
-    height: 1px;
-    background: var(--soft);
-    margin: 5px 0 8px;
-  }
-  .cvevent-bullets { padding-left: 0; list-style: none; }
-  .cvevent-bullets li {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 4px;
-    font-size: 12.5px;
-    color: #2a2010;
-    line-height: 1.55;
-  }
-  .bullet-arrow {
-    flex-shrink: 0;
-    margin-top: 3px;
-    width: 0; height: 0;
-    border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-left: 7px solid #86909999;
-  }
-
-  /* ── Header event (meta) ── */
-  .headerevent {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 8px;
-    margin-bottom: 7px;
-    align-items: baseline;
-  }
-  .headerevent-key {
-    color: var(--sect);
-    font-size: 12px;
-    font-weight: 600;
-  }
-  .headerevent-key::before {
-    content: '';
-    display: inline-block;
-    width: 0; height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 6px solid #86909999;
-    margin-right: 6px;
-    vertical-align: middle;
-    margin-top: -2px;
-  }
-  .headerevent-val { font-size: 12.5px; color: var(--ink); }
-
-  /* ── Skills table ── */
-  .skill-row {
-    display: grid;
-    grid-template-columns: 110px 1fr;
-    gap: 8px;
-    margin-bottom: 10px;
-    align-items: start;
-  }
-  .skill-label { font-weight: 700; font-size: 12.5px; }
-  .skill-inner-row { margin-bottom: 3px; font-size: 12px; }
-  .skill-inner-row strong { font-weight: 600; color: var(--sect); }
-
-  /* ── Images ── */
-  img {
-    width: 100%;
-  }
-
-  /* ── Profile photo ── */
-  .photo-area {
-    float: right;
-    margin: -8px 0 12px 24px;
-    width: 110px;
-    height: 130px;
-    overflow: hidden;
-    border: 2px solid var(--soft);
-    background: var(--accent-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .photo-placeholder {
-    font-family: 'DM Mono', monospace;
-    font-size: 9px;
-    color: var(--muted);
-    text-align: center;
-    padding: 8px;
-  }
-
-  /* ── Footer bar ── */
-  .doc-footer {
-    background: #86909999;
-    padding: 10px 40px;
-    text-align: center;
-    font-family: 'DM Mono', monospace;
-    font-size: 10px;
-    color: white;
-    letter-spacing: 0.06em;
-  }
-  .doc-footer a { color: #d4c4b8; }
-
-  /* ── Summary ── */
-  .summary {
-    background: var(--accent-light);
-    border-left: 3px solid var(--sect);
-    padding: 14px 18px;
-    margin: 10px 0 4px;
-    font-size: 12.5px;
-    line-height: 1.65;
-    color: #2a1f10;
-  }
-
-  @media (max-width: 640px) {
-    .doc-body { padding: 24px 20px 32px; }
-    .doc-header h1, .doc-header .subtitle { font-size: 1.6rem; }
-    .cvevent-header { grid-template-columns: 80px 1fr; }
-    .cvevent-place { grid-column: 1 / -1; text-align: left; }
-  }
+/* ── Summary ── */
+ .content-box {
+     background: var(--bg_light_clr);
+     border-left: 3px solid var(--design_clr);
+     padding: 14px 18px;
+     margin: 10px 0 4px;
+     font-size: 12.5px;
+     line-height: 1.65;
+     color: #2a1f10;
+}
+ @media (max-width: 640px) {
+     .doc-body {
+         padding: 24px 20px 32px;
+    }
+     .doc-header h1, .doc-header .subtitle {
+         font-size: 1.6rem;
+    }
+     .cvevent-header {
+         grid-template-columns: 80px 1fr;
+    }
+     .cvevent-place {
+         grid-column: 1 / -1;
+         text-align: left;
+    }
+}

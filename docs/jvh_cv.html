@@ -14,7 +14,7 @@
 <script src="js/navbar.js" defer></script>
 
 <!-- ═══════════════════ CV ═══════════════════ -->
-<div class="page active" id="tab-cv">
+<div class="page" id="cv">
   <div class="doc">
     <div class="doc-header">
       <span class="subtitle">Joakim Vik Haukedal</span>
@@ -43,7 +43,7 @@
 
       <!-- Summary -->
       <div class="cvsection"><div class="arrows"><div class="arrow-shape"></div><div class="arrow-shape"></div><div class="arrow-shape"></div></div><div class="cvsection-label">Summary</div></div>
-      <div class="summary">
+      <div class="content-box">
         I am a recent informatics graduate (M.Sc.) with project experience in point cloud based computations, logistics system risk evaluation and AI-based systems. My passion lies in implementing AI methods in a transparent and safe way, ensuring interpretability and traceability. Additionally I enjoy the perceptible nature of computer vision projects, enabling observable interpretation of objectives and progress. During my studies, I focused on robotics, computer vision (MVG), and interpreting AI decision making. My weekends are usually spent foraging for mushrooms and seasonal food in the local forests.
       </div>
 
@@ -151,14 +151,5 @@
     </div>
   </div>
 </div>
-
-<script>
-  function showTab(name) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('tab-' + name).classList.add('active');
-    event.currentTarget.classList.add('active');
-  }
-</script>
 </body>
 </html>
